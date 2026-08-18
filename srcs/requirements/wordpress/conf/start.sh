@@ -1,5 +1,15 @@
 #!/bin/bash
 
+sleep 5
+until mysqladmin ping \
+        -h"mariadb" \
+        -u"$SQL_USER" \
+        -p"$SQL_PASSWORD" \
+        --silent
+    do
+        sleep 2
+    done
+
 if [ ! -f "/var/www/wordpress/wp-config.php" ]; then
 
     echo "[INFO] WordPress is not initialized."

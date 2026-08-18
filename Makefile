@@ -20,4 +20,4 @@ fclean:
 	sudo rm -rf /home/$(USER)/data/mariadb
 	sudo rm -rf /home/$(USER)/data/wordpress
 
-.PHONY: all up fclean
+.PHONY: all down up fclean

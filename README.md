@@ -83,8 +83,8 @@ The infrastructure is composed of:
 ### Main Design Choices
 
 - One container per service.
-- No pre-configured Docker images were used.
-- Communication between containers occurs only through an internal Docker network.
+- No pre-configured Docker images were used aside from debian:bookworm.
+- Communication between containers occurs only through an internal Docker network named inception for this exercise.
 - Persistent application data is stored inside Docker volumes.
 - Configuration values are supplied through environment variables.
 - TLS is terminated by NGINX, making it the single public entry point.
@@ -135,7 +135,7 @@ Disadvantages:
 - mainly designed for Docker Swarm
 - more complex than required for this project
 
-For the mandatory project, environment variables provide a practical configuration mechanism, although Docker Secrets are the preferred solution for production deployments.
+For the mandatory project, environment variables provide a practical configuration mechanism, although Docker Secrets are the preferred solution for production deployments, here the .env will be intialized from the data in the ./secrets folder.
 
 ---
 
@@ -192,7 +192,7 @@ Disadvantages:
 - easier to accidentally modify files
 - less portable
 
-Docker volumes are used because they provide persistent storage while remaining independent of the host filesystem.
+Docker volumes are used because they provide persistent storage while remaining independent of the host filesystem. The subject forced us to use named volumes, so we got a mix of those to guarantee they are stored into /home/login/data/[wordpress | mariadb]
 
 ---
 

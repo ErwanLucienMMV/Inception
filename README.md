@@ -325,7 +325,7 @@ make re
 Artificial intelligence tools were used exclusively as learning and documentation aids.
 
 AI assisted with:
-- improving documentation quality
+- improving documentation quality (README, USER_DOC and DEV_DOC were rewritten using chatGPT)
 - clarifying Docker concepts
 - comparing virtualization and containerization technologies
 - explaining networking, volumes, and configuration mechanisms

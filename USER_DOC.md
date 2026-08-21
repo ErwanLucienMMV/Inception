@@ -16,6 +16,14 @@ The services are connected together automatically by Docker Compose.
 
 From the root of the repository:
 
+Provide the .env, either by copying and filling the example.env or moving a secret folder and running
+
+```bash
+make .env
+```
+
+then run
+
 ```bash
 make
 ```
